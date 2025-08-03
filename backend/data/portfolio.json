@@ -1,0 +1,26 @@
+[
+  {
+    "id": "d4e5f6g7-h8i9-0123-defg-456789012345",
+    "tickerSymbol": "CASH",
+    "assetType": "CASH",
+    "quantity": 5000,
+    "purchasePrice": 1,
+    "purchaseDate": "2024-01-01"
+  },
+  {
+    "id": "962aa0e0-06f7-41f5-b8b6-cb7f2c94db84",
+    "tickerSymbol": "TCS",
+    "assetType": "STOCK",
+    "quantity": 1,
+    "purchasePrice": 10,
+    "purchaseDate": "2005-01-01"
+  },
+  {
+    "id": "f7e02a31-6e5e-4934-9967-59487a8886ed",
+    "tickerSymbol": "TSYS",
+    "assetType": "BOND",
+    "quantity": 13,
+    "purchasePrice": 67,
+    "purchaseDate": "2024-08-09"
+  }
+]

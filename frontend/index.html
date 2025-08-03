@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Portfolio Management</h1>
+        </header>
+
+        <!-- Portfolio Summary -->
+        <section class="summary-section">
+            <div class="summary-card">
+                <h2>Portfolio Summary</h2>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <span class="stat-label">Total Value:</span>
+                        <span class="stat-value" id="total-value">$0.00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Total P/L:</span>
+                        <span class="stat-value" id="total-pl">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Item Form -->
+        <section class="form-section">
+            <div class="form-card">
+                <h2>Add New Portfolio Item</h2>
+                <form id="add-item-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ticker">Ticker Symbol:</label>
+                            <input type="text" id="ticker" name="tickerSymbol" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="asset-type">Asset Type:</label>
+                            <select id="asset-type" name="assetType" required>
+                                <option value="">Select Type</option>
+                                <option value="STOCK">Stock</option>
+                                <option value="ETF">ETF</option>
+                                <option value="BOND">Bond</option>
+                                <option value="MUTUAL_FUND">Mutual Fund</option>
+                                <option value="CRYPTO">Crypto</option>
+                                <option value="CASH">Cash</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" step="0.01" min="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="purchase-price">Purchase Price:</label>
+                            <input type="number" id="purchase-price" name="purchasePrice" step="0.01" min="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="purchase-date">Purchase Date:</label>
+                            <input type="date" id="purchase-date" name="purchaseDate" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Add Item</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Portfolio Table -->
+        <section class="table-section">
+            <div class="table-card">
+                <h2>Portfolio Holdings</h2>
+                <div class="table-container">
+                    <table id="portfolio-table">
+                        <thead>
+                            <tr>
+                                <th>Ticker</th>
+                                <th>Type</th>
+                                <th>Quantity</th>
+                                <th>Purchase Price</th>
+                                <th>Purchase Date</th>
+                                <th>Current Price</th>
+                                <th>Current Value</th>
+                                <th>P/L</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolio-tbody">
+                            <!-- Portfolio items will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                    <div id="no-items-message" class="no-items" style="display: none;">
+                        <p>No portfolio items found. Add your first investment above!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Error Messages -->
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div id="edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Portfolio Item</h2>
+                <span class="close" id="close-modal">&times;</span>
+            </div>
+            <form id="edit-item-form">
+                <input type="hidden" id="edit-id" name="id">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-ticker">Ticker Symbol:</label>
+                        <input type="text" id="edit-ticker" name="tickerSymbol" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-asset-type">Asset Type:</label>
+                        <select id="edit-asset-type" name="assetType" required>
+                            <option value="STOCK">Stock</option>
+                            <option value="ETF">ETF</option>
+                            <option value="BOND">Bond</option>
+                            <option value="MUTUAL_FUND">Mutual Fund</option>
+                            <option value="CRYPTO">Crypto</option>
+                            <option value="CASH">Cash</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-quantity">Quantity:</label>
+                        <input type="number" id="edit-quantity" name="quantity" step="0.01" min="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-purchase-price">Purchase Price:</label>
+                        <input type="number" id="edit-purchase-price" name="purchasePrice" step="0.01" min="0.01" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-purchase-date">Purchase Date:</label>
+                        <input type="date" id="edit-purchase-date" name="purchaseDate" required>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-edit">Cancel</button>
+                    <button type="submit">Update Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
