@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f7faff;
+  color: #333;
+}
+
+header {
+  background-color: #6ec6ca;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #fff;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+
+.transaction-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+.chart-wrapper {
+  margin: 20px auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+canvas {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
+
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+}
+
+canvas.lineChart {
+  max-width: 800px;
+  margin: 80px auto;
+  display: block;
+}
+
+/* .card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+} */
+
+form input, form select {
+  margin: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.chart-container {
+  max-width: 500px;
+  margin: 1rem auto;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
