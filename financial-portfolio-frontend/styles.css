@@ -3,10 +3,11 @@ body {
   margin: 0;
   background: #f7faff;
   color: #333;
+  padding-bottom: 70px; 
 }
 
 header {
-  background-color: #6ec6ca;
+  background-color: #c5eef0;
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -40,8 +41,8 @@ header {
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
 }
 
@@ -159,12 +160,14 @@ canvas {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #6ec6ca;
-  color: #fff;
-  position: relative;
+  background-color: #e5eaf0;
+  color: #131212;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
 }
+
 
 /* Dashboard */
 :root {
@@ -178,6 +181,9 @@ footer {
 body {
   font-family: var(--font-main);
   background-color: #f9f9f9;
+  padding-bottom: 70px; /* adjust based on footer height */
+  
+  
 }
 
 .dashboard-header {
@@ -190,8 +196,8 @@ body {
 }
 
 .logo {
-  width: 60px;
-  margin-right: 1rem;
+  width: 250px;
+  margin-right: 3rem;
 }
 
 .app-title {
@@ -304,7 +310,7 @@ body {
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 100%; }
+  to { width: 30%; }
 }
 
 .tagline-text {

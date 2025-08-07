@@ -174,13 +174,13 @@
 import { createPieChart, createLineChart } from '../charts.js';
 
 const tips = [
-  'images/tip1.jpg',
-  'images/tip2.jpg',
-  'images/tip3.jpg',
-  'images/tip4.jpg',
-  'images/tip5.jpg',
+  'images/tip1.png',
+  'images/tip2.png',
+  'images/tip3.png',
+  'images/tip4.png',
+  'images/tip5.png',
   'images/tip6.jpg',
-  'images/tip7.jpg'
+  //'images/tip7.jpg'
 ];
 
 export function renderDashboard() {
