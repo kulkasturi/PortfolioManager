@@ -1,40 +1,46 @@
 export function renderAssets() {
     const section = document.getElementById('assets');
-    section.innerHTML = `
-      <h2>Assets</h2>
-      <form id="assetForm">
-        <input type="text" id="name" placeholder="Name" required />
-        <select id="type">
-          <option value="Stock">Stock</option>
-          <option value="Mutual Fund">Mutual Fund</option>
-          <option value="FD">FD</option>
-          <option value="Gold">Gold</option>
-        </select>
-        <input type="number" id="amount" placeholder="Invested ₹" required />
-        <button type="submit">Add</button>
-      </form>
-      <div id="assetList"></div>
-    `;
+    // section.innerHTML = `
+    //   <h2>Assets</h2>
+    //   <form id="assetForm">
+    //     <input type="text" id="name" placeholder="Name" required />
+    //     <select id="type">
+    //       <option value="Stock">Stock</option>
+    //       <option value="Mutual Fund">Mutual Fund</option>
+    //       <option value="FD">FD</option>
+    //       <option value="Gold">Gold</option>
+    //     </select>
+    //     <input type="number" id="amount" placeholder="Invested ₹" required />
+    //     <button type="submit">Add</button>
+    //   </form>
+    //   <div id="assetList"></div>
+    // `;
   
+
+    section.innerHTML = `
+  <h2>Assets</h2>
+  <div id="assetList"></div>
+`;
+
     fetchAssets();
   
-    document.getElementById('assetForm').onsubmit = function (e) {
-      e.preventDefault();
-      const payload = {
-        asset_name: document.getElementById('name').value,
-        asset_type: document.getElementById('type').value,
-        amount_invested: parseFloat(document.getElementById('amount').value),
-        purchase_date: new Date().toISOString().split('T')[0],
-        current_value: parseFloat(document.getElementById('amount').value)
-      };
+    // document.getElementById('assetForm').onsubmit = function (e) {
+    //   e.preventDefault();
+    //   const payload = {
+    //     asset_name: document.getElementById('name').value,
+    //     asset_type: document.getElementById('type').value,
+    //     amount_invested: parseFloat(document.getElementById('amount').value),
+    //     purchase_date: new Date().toISOString().split('T')[0],
+    //     current_value: parseFloat(document.getElementById('amount').value)
+    //   };
   
-      fetch('http://localhost:8089/api/assets', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(() => renderAssets());
-    };
-  }
+  //     fetch('http://localhost:8089/api/assets', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(payload)
+  //     }).then(() => renderAssets());
+  //   };
+   }
   
   function fetchAssets() {
     fetch('http://localhost:8089/api/assets')

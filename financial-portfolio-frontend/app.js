@@ -7,6 +7,8 @@ function clearSections() {
   document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
 }
 
+
+
 window.navigate = function (id) {
   clearSections();
   document.getElementById(id).classList.add('active');
@@ -18,5 +20,8 @@ window.navigate = function (id) {
   }
 };
 
+
+window.navigate = navigate;
 // Load default view
 window.onload = () => navigate('dashboard');
+

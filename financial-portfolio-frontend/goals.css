@@ -1,0 +1,323 @@
+/* :root {
+  --pastel-blue: #c5dbff;
+  --pastel-green: #cef8d2;
+  --pastel-yellow: #f1f3c3;
+  --pastel-pink: #fce0da;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --text-dark: #2c3e50;
+  --text-secondary: #34495e;
+}
+
+#goalForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--pastel-pink), #f8c8c3);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#goalForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#goalForm input,
+#goalForm select {
+  flex: 1 1 200px;
+  padding: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#goalForm input:focus,
+#goalForm select:focus {
+  outline: none;
+  border-color: var(--pastel-green);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+#goalForm button {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--pastel-green);
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#goalForm button:hover {
+  background: #b0e6b8;
+  transform: scale(1.05);
+}
+
+#goalList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#goalList .card {
+  background: linear-gradient(135deg, var(--pastel-yellow), #e8eab5);
+  border-radius: var(--border-radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#goalList .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#goalList .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--pastel-blue);
+  transition: height 0.3s ease;
+}
+
+#goalList .card:hover::before {
+  height: 8px;
+}
+
+#goalList .card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.3px;
+}
+
+#goalList .card p {
+  margin: 0.6rem 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+/*
+@media (max-width: 768px) {
+  #goalForm {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+
+  #goalForm input,
+  #goalForm select,
+  #goalForm button {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  #goalList {
+    grid-template-columns: 1fr;
+  }
+} */
+
+
+
+:root {
+  --pastel-blue: #c5dbff;
+  --pastel-green: #cef8d2;
+  --pastel-yellow: #f1f3c3;
+  --pastel-pink: #fce0da;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --text-dark: #2c3e50;
+  --text-secondary: #34495e;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Ensure Inter font is applied */
+}
+
+#goalForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--pastel-pink), #f8c8c3);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#goalForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#goalForm input,
+#goalForm select {
+  flex: 1 1 200px;
+  padding: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#goalForm input:focus,
+#goalForm select:focus {
+  outline: none;
+  border-color: var(--pastel-green);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+#goalForm button {
+  flex: 0 0 auto;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--pastel-green);
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#goalForm button:hover {
+  background: #b0e6b8;
+  transform: scale(1.05);
+}
+
+/* New styles for goalAchievabilityMessage */
+#goalAchievabilityMessage {
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  transition: all 0.3s ease-in-out; /* Smooth transition for appearance */
+}
+
+/* Specific styles for achievable (green) message - these will be overridden by Tailwind if present */
+#goalAchievabilityMessage.bg-green-100 {
+  background-color: var(--pastel-green); /* Using custom variable for consistency */
+  color: #28a745; /* A darker green for text */
+  border: 1px solid #28a745;
+}
+
+/* Specific styles for not achievable (red) message - these will be overridden by Tailwind if present */
+#goalAchievabilityMessage.bg-red-100 {
+  background-color: #ffe0e0; /* A light red for consistency */
+  color: #dc3545; /* A darker red for text */
+  border: 1px solid #dc3545;
+}
+
+
+#goalList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#goalList .card {
+  background: linear-gradient(135deg, var(--pastel-yellow), #e8eab5);
+  border-radius: var(--border-radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#goalList .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#goalList .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--pastel-blue);
+  transition: height 0.3s ease;
+}
+
+#goalList .card:hover::before {
+  height: 8px;
+}
+
+#goalList .card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.3px;
+}
+
+#goalList .card p {
+  margin: 0.6rem 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #goalForm {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+
+  #goalForm input,
+  #goalForm select,
+  #goalForm button {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  #goalList {
+    grid-template-columns: 1fr;
+  }
+}
